@@ -21,6 +21,9 @@ public class AppConfing implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
 
-        registry.addInterceptor(appIntercepter).excludePathPatterns("/").excludePathPatterns();
+        registry.addInterceptor(appIntercepter)
+                .addPathPatterns("/index.jsp")
+                .addPathPatterns("/**/*.do")
+                .excludePathPatterns("/").excludePathPatterns();
     }
 }
